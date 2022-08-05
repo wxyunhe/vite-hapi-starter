@@ -1,0 +1,31 @@
+{
+  "name": "server",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "bin": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./index.js",
+    "dev": "cross-env NODE_ENV=development nodemon ./index.js",
+    "pkg": "pkg ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/hapi": "^20.2.2",
+    "@hapi/inert": "^7.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19",
+    "pkg": "^5.8.0"
+  },
+  "pkg": {
+    "assets": "public/**/*",
+    "targets": [
+      "node16-win-x64"
+    ],
+    "outputPath": "../release"
+  }
+}

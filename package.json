@@ -1,0 +1,30 @@
+{
+  "name": "mytask",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "start": "yarn dev",
+    "dev": "run-p dev/c dev/s",
+    "dev/s": "yarn workspace server dev",
+    "dev/c": "yarn workspace client dev",
+    "build": "run-s build/c pkg/s",
+    "build/c": "yarn workspace client build",
+    "pkg/s": "yarn workspace server pkg"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "npm-run-all": "^4.1.5"
+  },
+  "engines": {
+    "node": ">=16"
+  }
+}
